@@ -28,6 +28,14 @@ public class LinkedBinarySearchTree<E> implements BinarySearchTree<E> {
         this(null);
     }
 
+    public LinkedBinaryTree<E> getBinTree() {
+        return binTree;
+    }
+
+    public void setBinTree(LinkedBinaryTree<E> binTree) {
+        this.binTree = binTree;
+    }
+
     /**
      * Creates a BinarySearchTree with the given comparator.
      *

@@ -1,5 +1,6 @@
 package test;
 
+import material.CheckTree;
 import material.Position;
 import material.tree.binarytree.BinaryTree;
 import material.tree.binarytree.LinkedBinaryTree;

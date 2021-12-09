@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import material.Position;
+import material.tree.binarytree.LinkedBinaryTree;
 
 /**
  * Realization of a red-black Tree by extending a binary search tree.
@@ -89,6 +90,11 @@ public class RBTree<E> implements BinarySearchTree<E> {
 
     private final LinkedBinarySearchTree<RBInfo<E>> resBT = new LinkedBinarySearchTree<>();
     private final Reestructurator reestructurator = new Reestructurator();
+
+    @Override
+    public LinkedBinaryTree<E> getBinTree() {
+        return (LinkedBinaryTree<E>) this.resBT.getBinTree();
+    }
 
     @Override
     public Position<E> find(E value) {
@@ -307,7 +313,7 @@ public class RBTree<E> implements BinarySearchTree<E> {
     @Override
     public Iterator<Position<E>> iterator() {
         Iterator<Position<RBInfo<E>>> bstIt = resBT.iterator();
-        RBTreeIterator<E> it = new RBTreeIterator<>(bstIt);
+        RBTreeIterator<E> it = new RBTreeIterator<E>(bstIt);
         return it;
     }
 

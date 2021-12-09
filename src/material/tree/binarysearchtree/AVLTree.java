@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import material.Position;
+import material.tree.binarytree.LinkedBinaryTree;
 
 /**
  * AVLTree class - implements an AVL Tree by extending a binary search tree.
@@ -96,7 +97,12 @@ public class AVLTree<E> implements BinarySearchTree<E> {
 
     private LinkedBinarySearchTree<AVLInfo<E>> bst = new LinkedBinarySearchTree<>();
     private Reestructurator reestructurator = new Reestructurator();
-    
+
+    @Override
+    public LinkedBinaryTree<E> getBinTree() {
+        return (LinkedBinaryTree<E>) this.bst.getBinTree();
+    }
+
     @Override
     public Position<E> find(E value) {
         AVLInfo<E> searchedValue = new AVLInfo<>(value);
@@ -227,7 +233,7 @@ public class AVLTree<E> implements BinarySearchTree<E> {
     @Override
     public Iterator<Position<E>> iterator() {
         Iterator<Position<AVLInfo<E>>> bstIt = bst.iterator();
-        AVLTreeIterator<E> it = new AVLTreeIterator<>(bstIt);
+        AVLTreeIterator<E> it = new AVLTreeIterator<E>(bstIt);
         return it;
     }
 

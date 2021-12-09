@@ -516,7 +516,7 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 
     /**
      * Attach the tree t at the root of this tree
-     * @param midKey 
+
      */
     public void attach(LinkedBinaryTree<E> lbt) {
         if (lbt == this)
@@ -534,8 +534,6 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
     
     /**
      * Attach tree t as left children of node p
-     * @param p
-     * @param t 
      */
     public void attachLeft(Position<E> p, LinkedBinaryTree<E> lbt) {
         BTNode<E> node = checkPosition(p);
@@ -558,7 +556,6 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
     /**
      * Attach tree t as right children of node p
      * @param p
-     * @param t 
      */
     public void attachRight(Position<E> p, LinkedBinaryTree<E> lbt) {
         BTNode<E> node = checkPosition(p);

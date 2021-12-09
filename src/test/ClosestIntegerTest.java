@@ -1,5 +1,6 @@
 package test;
 
+import material.ClosestInteger;
 import material.Position;
 import material.tree.binarysearchtree.BinarySearchTree;
 import material.tree.binarysearchtree.LinkedBinarySearchTree;
@@ -16,7 +17,7 @@ public class ClosestIntegerTest {
     }
 
     /**
-     * Test of closest method, of class ClosestInteger.
+     * Test of closest method, of class material.ClosestInteger.
      */
     @Test
     public void testClosest() {
@@ -39,9 +40,7 @@ public class ClosestIntegerTest {
         tree.insert(31);
         tree.insert(29);
         Position<Integer> dos = tree.insert(44);
-        
-        
-         
+
         Position<Integer> result = instance.closest(tree, 5);
         assertEquals(expResult, result);
         assertEquals(dos, instance.closest(tree, 50));

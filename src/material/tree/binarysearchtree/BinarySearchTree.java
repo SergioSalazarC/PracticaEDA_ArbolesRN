@@ -5,6 +5,7 @@
 package material.tree.binarysearchtree;
 
 import material.Position;
+import material.tree.binarytree.LinkedBinaryTree;
 
 /**
  *
@@ -13,6 +14,8 @@ import material.Position;
  * 
  */
 public interface BinarySearchTree<E> extends Iterable<Position<E>> {
+
+    LinkedBinaryTree<E> getBinTree();
 
     /**
      * Returns an entry containing the given key. Returns null if no such entry
